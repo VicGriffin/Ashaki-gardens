@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -48,8 +49,14 @@ export function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
         {/* Logo */}
         <Link href="#home" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/40 bg-deep-green/40">
-            <span className="font-serif text-lg font-bold text-gold">A</span>
+          <div className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/40 bg-deep-green/40 overflow-hidden">
+            <Image
+              src="/logo.jpg"
+              alt="Ashaki Gardens Logo"
+              width={40}
+              height={40}
+              className="object-cover"
+            />
           </div>
           <span className="font-serif text-xl font-semibold tracking-wide text-beige">
             Ashaki Gardens
