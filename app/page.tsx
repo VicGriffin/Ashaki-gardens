@@ -11,10 +11,12 @@ import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { BackToTop } from "@/components/back-to-top"
 import { SocialShare } from "@/components/social-share"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function Home() {
   return (
     <main>
+      <ThemeToggle />
       <Navbar />
       <Hero />
       <About />
