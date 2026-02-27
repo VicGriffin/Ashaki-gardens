@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { useTheme } from "@/components/theme-provider"
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -18,6 +19,7 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { theme } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,7 +60,9 @@ export function Navbar() {
               className="object-cover"
             />
           </div>
-          <span className="font-serif text-xl font-semibold tracking-wide text-beige">
+          <span className={`font-serif text-xl font-semibold tracking-wide transition-colors duration-300 ${
+            theme === "dark" ? "text-beige" : "text-beige-dark"
+          }`}>
             Ashaki Gardens
           </span>
         </Link>
@@ -69,7 +73,9 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium tracking-wide text-beige-dark transition-all duration-300 hover:text-gold hover-lift"
+              className={`text-sm font-medium tracking-wide transition-colors duration-300 hover:text-gold hover-lift ${
+                theme === "dark" ? "text-beige" : "text-beige-dark"
+              }`}
             >
               {link.label}
             </Link>
@@ -79,7 +85,9 @@ export function Navbar() {
         {/* Desktop CTA */}
         <Link
           href="#reservation"
-          className="hidden btn-modern rounded-lg bg-gold px-5 py-2.5 text-sm font-semibold text-charcoal transition-all hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 lg:block"
+          className={`hidden btn-modern rounded-lg bg-gold px-5 py-2.5 text-sm font-semibold text-charcoal transition-all hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 lg:block ${
+            theme === "dark" ? "hover:bg-beige" : ""
+          }`}
         >
           Book a Table
         </Link>
@@ -87,7 +95,9 @@ export function Navbar() {
         {/* Mobile Burger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="relative z-50 flex h-10 w-10 items-center justify-center rounded-lg text-beige transition-colors hover:text-gold lg:hidden"
+          className={`relative z-50 flex h-10 w-10 items-center justify-center rounded-lg transition-colors duration-300 hover:text-gold lg:hidden ${
+            theme === "dark" ? "text-beige" : "text-beige-dark"
+          }`}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
