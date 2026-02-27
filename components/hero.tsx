@@ -53,13 +53,15 @@ export function Hero() {
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <Link
             href="#reservation"
-            className="rounded-lg bg-gold px-8 py-3.5 text-sm font-semibold tracking-wide text-charcoal transition-all hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20"
+            className="btn-modern animate-slide-in-left rounded-lg bg-gold px-8 py-3.5 text-sm font-semibold tracking-wide text-charcoal transition-all hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20"
+            style={{ animationDelay: '200ms' }}
           >
             Book a Table
           </Link>
           <Link
             href="#contact"
-            className="rounded-lg border border-beige/30 bg-charcoal/30 px-8 py-3.5 text-sm font-semibold tracking-wide text-beige backdrop-blur-sm transition-all hover:border-gold/50 hover:text-gold"
+            className="animate-slide-in-right rounded-lg border border-beige/30 bg-charcoal/30 px-8 py-3.5 text-sm font-semibold tracking-wide text-beige backdrop-blur-sm transition-all hover:border-gold/50 hover:text-gold hover-lift"
+            style={{ animationDelay: '400ms' }}
           >
             Host an Event
           </Link>

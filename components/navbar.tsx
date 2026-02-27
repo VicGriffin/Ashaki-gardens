@@ -69,7 +69,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium tracking-wide text-beige-dark transition-colors hover:text-gold"
+              className="text-sm font-medium tracking-wide text-beige-dark transition-all duration-300 hover:text-gold hover-lift"
             >
               {link.label}
             </Link>
@@ -79,7 +79,7 @@ export function Navbar() {
         {/* Desktop CTA */}
         <Link
           href="#reservation"
-          className="hidden rounded-lg bg-gold px-5 py-2.5 text-sm font-semibold text-charcoal transition-all hover:bg-gold-light lg:block"
+          className="hidden btn-modern rounded-lg bg-gold px-5 py-2.5 text-sm font-semibold text-charcoal transition-all hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 lg:block"
         >
           Book a Table
         </Link>

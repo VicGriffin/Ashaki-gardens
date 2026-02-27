@@ -9,6 +9,8 @@ import { Testimonials } from "@/components/testimonials"
 import { Reservation } from "@/components/reservation"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
+import { BackToTop } from "@/components/back-to-top"
+import { SocialShare } from "@/components/social-share"
 
 export default function Home() {
   return (
@@ -24,6 +26,8 @@ export default function Home() {
       <Reservation />
       <Contact />
       <Footer />
+      <BackToTop />
+      <SocialShare />
     </main>
   )
 }
